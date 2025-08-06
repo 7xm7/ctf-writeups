@@ -10,7 +10,7 @@ Each folder contains:
 - 🔍 Tools used
 - 🧠 Concepts learned
 - 🐚 Commands executed
-- 🏁 Flags found (redacted if needed)
+- 🏁 Flags found 
 
 ## Disclaimer
 
