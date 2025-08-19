@@ -17,17 +17,17 @@ This is a simple write-up for the Pickle Rick room on TryHackMe. The goal is to 
 
 Performed an initial scan with:
 
-nmap -sV -p- <target-ip>
+    nmap -sV -p- <target-ip>
 
-Discovered open port: 80/tcp - Apache httpd 2.4.41
+    Discovered open port: 80/tcp - Apache httpd 2.4.41
 
-Accessing the website showed a basic Rick & Morty themed page with the message: Rick is sup4r cool
+    Accessing the website showed a basic Rick & Morty themed page with the message: Rick is sup4r cool
 
 🕵️ Directory Bruteforce
 
-Used Gobuster to find hidden paths:
+    Used Gobuster to find hidden paths:
 
-gobuster dir -u http://<target-ip> -w /usr/share/wordlists/dirb/common.txt
+    gobuster dir -u http://<target-ip> -w /usr/share/wordlists/dirb/common.txt
 
 Found:
 
@@ -39,10 +39,10 @@ Found:
 
 🔐 Login Panel
 
-Used the credentials:
+    Used the credentials:
 
-Username: R1ckRul3s
-Password: Wubbalubbadubdub
+    Username: R1ckRul3s
+    Password: Wubbalubbadubdub
 
 Login successful.
 💻 Command Execution
@@ -51,16 +51,16 @@ The post-login interface accepts system commands. I used it as a pseudo shell.
 
 Example:
 
-ls
-cat <file>
+    ls
+    cat 
 
 🔑 Flags:
 
-  First Flag: cat /home/rick/first_flag.txt
+      First Flag: cat /home/rick/first_flag.txt
 
-  Second Flag: cat /var/www/html/assets/second_flag.txt
+      Second Flag: cat /var/www/html/assets/second_flag.txt
 
-  Third Flag: cat /root/third_flag.txt
+      Third Flag: cat /root/third_flag.txt
 
 🧪 Lessons Learned:
 
